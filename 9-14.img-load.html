@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head><title>onload로 이미지 크기 출력</title>
+        <script>
+            function changeimage() {
+                let sel = document.getElementById("sel");
+	            let img = document.getElementById("myImg");
+	            img.onload = function () {  
+		        let mySpan = document.getElementById("mySpan");
+		        mySpan.innerHTML = img.width + "x" + img.height;
+	            }
+	        let index= sel.selectedIndex; 
+	        img.src = sel.options[index].value; }
+        </script>
+    </head>
+    <body onload = "changeimage()">
+        <h3>onload로 이미지 크기 출력</h3>
+        <hr>
+        <form>
+            <select id = "sel" onchange = "changeimage()">
+                <option value = "media/kiki.png">와이키키
+                <option value = "media/hea.png">해운대
+                <option value = "media/pl.jfif">플로리다
+            </select>
+            <span id = "mySpan">이미지크기</span>
+        </form>
+        <p><img id = "myImg" src = "media/kiki.png" alt = "."></p>
+    </body>
+</html>

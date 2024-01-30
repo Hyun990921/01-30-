@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head><title>선택된 물품 계산하기</title>
+        <script>
+            let sum=0;
+            function calc(cBox) {
+	            if(cBox.checked)
+		        sum += parseInt(cBox.value);
+	            else
+		        sum -= parseInt(cBox.value);
+	        
+                document.getElementById("sumtext").value = sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+        </script>
+    </head>
+    <body>
+    <h3>다이소</h3>
+    <hr>
+        <form>
+            <input type="checkbox" name="hat" value="19000" onclick="calc(this)"><strong>모자 19,000원</strong>
+            <input type="checkbox" name="glove" value="18000" onclick="calc(this)"><strong>장갑 18,000원</strong>
+            <input type="checkbox" name="clock" value="29000" onclick="calc(this)"><strong>시계 29,000원</strong>
+            <input type="checkbox" name="tissue" value="10900" onclick="calc(this)"><strong>휴지 10,900원</strong><br>
+            <input type="checkbox" name="dictionary" value="80000" onclick="calc(this)"><strong>사전 80,000원</strong>
+            <input type="checkbox" name="wallet" value="91000" onclick="calc(this)"><strong>지갑 91,000원</strong>
+            <input type="checkbox" name="mbag" value="90000" onclick="calc(this)"><strong>가방 90,000원</strong>
+            <input type="checkbox" name="anklet" value="80000" onclick="calc(this)"><strong>발찌 80,000원</strong><br>
+            <input type="checkbox" name="bracelet" value="99000" onclick="calc(this)"><strong>팔찌 99,000원</strong>
+            <input type="checkbox" name="ring" value="54000" onclick="calc(this)"><strong>반지 54,000원</strong>
+            <input type="checkbox" name="perfume" value="60000" onclick="calc(this)"><strong>향수 60,000원</strong>
+            <input type="checkbox" name="shoes" value="58000" onclick="calc(this)"><strong>신발 58,000원</strong><br>
+            <input type="checkbox" name="sharp" value="12000" onclick="calc(this)"><strong>샤프 12,000원</strong>
+            <input type="checkbox" name="pencil" value="10000" onclick="calc(this)"><strong>연필 10,000원</strong>
+            <input type="checkbox" name="milk" value="21500" onclick="calc(this)"><strong>우유 21,500원</strong>
+            <input type="checkbox" name="candy" value="10500" onclick="calc(this)"><strong>사탕 10,500원</strong><br>
+            <input type="checkbox" name="cigarette" value="14500" onclick="calc(this)"><strong>담배 14,500원</strong>
+            <input type="checkbox" name="A carton of cigarettes" value="45000" onclick="calc(this)"><strong>보루 45,000원</strong>
+            <input type="checkbox" name="sandle" value="30000" onclick="calc(this)"><strong>샌들 30,000원</strong>
+            <input type="checkbox" name="TV" value="98000" onclick="calc(this)"><strong>티비 98,000원</strong><br>
+            지불하실 금액 <input type="text" id="sumtext" value="0" >
+        </form>
+    </body>
+</html>
